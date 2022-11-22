@@ -33,7 +33,7 @@ colors:
     white:   '0x828791'
 
 window:
-  opacity: 0.85
+  opacity: 1
   dimensions:
     columns: 100
     lines: 25
