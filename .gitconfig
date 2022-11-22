@@ -1,0 +1,19 @@
+[init]
+	defaultBranch = main
+[user]
+	email = arewerage@gmail.com
+	name = arewerage
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+	syntax-theme = OneHalfDark
+  navigate = true
+  light = false
+	side-by-side = true
+	line-numbers = true
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
