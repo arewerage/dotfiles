@@ -1,0 +1,9 @@
+#!/bin/sh
+
+configure_nvim() {
+  mkdir -p ~/.config/nvim/lua/user/
+  ln -s ~/.config/init.lua ~/.config/nvim/lua/user/
+  nvim +PackerSync
+}
+
+configure_nvim
