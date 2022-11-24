@@ -19,7 +19,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "onedark",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -238,7 +238,7 @@ local config = {
 		  tag = 'v0.3.0',
 		  requires = { 'nvim-lua/plenary.nvim' },
 		  config = function()
-			require('crates').setup()
+			  require('crates').setup()
 		  end,
 		},
 		-- { "morhetz/gruvbox" },
@@ -251,7 +251,16 @@ local config = {
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("todo-comments").setup {}
-      end
+      end,
+    },
+    {
+      'navarasu/onedark.nvim',
+      config = function()
+        require('onedark').setup {
+          style = 'darker'
+        }
+        require('onedark').load()
+      end,
     },
     
       -- You can disable default plugins as follows:
