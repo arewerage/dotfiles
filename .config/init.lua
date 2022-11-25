@@ -19,7 +19,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "onedark",
+  colorscheme = "default_theme",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -241,7 +241,6 @@ local config = {
 			  require('crates').setup()
 		  end,
 		},
-		-- { "morhetz/gruvbox" },
 		({
 		  "iamcco/markdown-preview.nvim",
 		  run = function() vim.fn["mkdp#util#install"]() end,
@@ -253,15 +252,16 @@ local config = {
         require("todo-comments").setup {}
       end,
     },
-    {
-      'navarasu/onedark.nvim',
-      config = function()
-        require('onedark').setup {
-          style = 'darker'
-        }
-        require('onedark').load()
-      end,
-    },
+    -- {
+    --   'navarasu/onedark.nvim',
+    --   config = function()
+    --     require('onedark').setup {
+    --       style = 'darker'
+    --     }
+    --     require('onedark').load()
+    --   end,
+    -- },
+		-- { "morhetz/gruvbox" },
     
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
