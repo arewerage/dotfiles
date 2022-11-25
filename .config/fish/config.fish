@@ -13,4 +13,6 @@ if status is-interactive
     alias la='exa -a --color=always --group-directories-first'
     alias ll='exa -l --color=always --group-directories-first'
     alias lt='exa -aT --color=always --group-directories-first'
+
+    alias lg='lazygit'
 end
