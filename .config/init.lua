@@ -19,7 +19,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "gruvbox",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -233,36 +233,27 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
-		{
-		  'saecki/crates.nvim',
-		  tag = 'v0.3.0',
-		  requires = { 'nvim-lua/plenary.nvim' },
-		  config = function()
-			  require('crates').setup()
-		  end,
-		},
-		({
-		  "iamcco/markdown-preview.nvim",
-		  run = function() vim.fn["mkdp#util#install"]() end,
-		}),
-    {
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup {}
-      end,
-    },
-    -- {
-    --   'navarasu/onedark.nvim',
-    --   config = function()
-    --     require('onedark').setup {
-    --       style = 'darker'
-    --     }
-    --     require('onedark').load()
-    --   end,
-    -- },
-		-- { "morhetz/gruvbox" },
-    
+      {
+        'saecki/crates.nvim',
+        tag = 'v0.3.0',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+          require('crates').setup()
+        end,
+      },
+      ({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+      }),
+      {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+          require("todo-comments").setup {}
+        end,
+      },
+      { "morhetz/gruvbox" },
+
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
