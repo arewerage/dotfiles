@@ -15,4 +15,6 @@ if status is-interactive
     alias lt='exa -aT --color=always --group-directories-first'
 
     alias lg='lazygit'
+
+    neofetch
 end
