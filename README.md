@@ -1,4 +1,5 @@
-# arewerage's Dotfiles
+# Dotfiles managed by [yadm](https://github.com/TheLocehiliosan/yadm)
+
 ```
-yadm clone git@github.com:arewerage/dotfiles.git
+yadm clone https://github.com/arewerage/dotfiles.git
 ```
