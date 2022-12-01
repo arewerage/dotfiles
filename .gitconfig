@@ -8,7 +8,7 @@
 [interactive]
   diffFilter = delta --color-only
 [delta]
-	syntax-theme = OneHalfDark
+	syntax-theme = gruvbox-dark
   navigate = true
   light = false
 	side-by-side = true
