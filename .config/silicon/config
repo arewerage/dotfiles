@@ -1,0 +1,9 @@
+--theme="gruvbox-dark"
+--font="JetBrainsMono Nerd Font"
+--background='#28282800'
+--no-line-number
+
+--shadow-color '#ebdbb2'
+--shadow-blur-radius=20
+
+#--no-window-controls
