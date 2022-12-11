@@ -6,4 +6,16 @@ configure_nvim() {
   nvim +PackerSync
 }
 
+configure_user_dirs() {
+  mv ~/Рабочий\ стол ~/desktop
+  mv ~/Загрузки ~/download
+  mv ~/Шаблоны ~/templates
+  mv ~/Общедоступные ~/public
+  mv ~/Документы ~/documents
+  mv ~/Музыка ~/music
+  mv ~/Изображения ~/pictures
+  mv ~/Видео ~/videos
+}
+
 configure_nvim
+configure_user_dirs
