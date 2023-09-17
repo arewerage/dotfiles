@@ -1,9 +1,5 @@
 #!/bin/sh
 
-configure_nvim() {
-  git clone git@github.com:arewerage/astronvim.git ~/.config/nvim/lua/user
-}
-
 configure_user_dirs() {
   mv ~/Рабочий\ стол ~/desktop
   mv ~/Загрузки ~/download
@@ -15,5 +11,4 @@ configure_user_dirs() {
   mv ~/Видео ~/videos
 }
 
-configure_nvim
 configure_user_dirs
