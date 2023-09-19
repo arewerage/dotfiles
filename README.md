@@ -10,5 +10,4 @@ After
 
 ```
 sudo pacman -Rsn $(pacman -Qtdq)
-sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 ```

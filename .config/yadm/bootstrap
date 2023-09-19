@@ -1,7 +1,7 @@
 #!/bin/sh
 # shellcheck disable=2046
 
-setup_manajro() {
+setup_manjaro() {
 	# Journals and swap
 	sudo journalctl --vacuum-size=500M && sudo journalctl --vacuum-time=7d
 	sudo systemctl enable fstrim.timer
@@ -46,6 +46,7 @@ setup_manajro() {
 	## Apps
 	yay -S alacritty discord timeshift qbittorrent telegram-desktop krita
 	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
+	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 
 	## Console utils
 	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
@@ -55,6 +56,8 @@ setup_manajro() {
 	## Other
 	sudo mhwd -a pci nonfree 0300
 	git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+	yadm remote set-url origin git@github.com:arewerage/dotfiles.git
+	git clone git@github.com:arewerage/astronvim_config.git ~/.config/nvim/lua/user
 	chsh -s /bin/fish
 	reboot
 }
