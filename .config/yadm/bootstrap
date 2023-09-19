@@ -48,12 +48,13 @@ setup_manajro() {
 	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
 
 	## Console utils
-	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python
+	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
 	yay -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
 	yay -S ffmpegthumbnailer unarchiver jq poppler fd
 
-	## Nvidia and Fish shell, then Reboot
+	## Other
 	sudo mhwd -a pci nonfree 0300
+	git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 	chsh -s /bin/fish
 	reboot
 }
