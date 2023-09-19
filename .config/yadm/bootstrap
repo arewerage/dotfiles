@@ -1,14 +1,74 @@
 #!/bin/sh
+# shellcheck disable=2046
+
+setup_manajro() {
+	# Journals and swap
+	sudo journalctl --vacuum-size=500M && sudo journalctl --vacuum-time=7d
+	sudo systemctl enable fstrim.timer
+	sudo systemctl start fstrim.timer
+	sudo systemctl status fstrim.timer
+	sudo sysctl -w vm.swappiness=10
+
+	# Cleanup
+	yay -Rsn firefox
+	yay -Rsn nano nano-syntax-highlighting
+	yay -Rsn zsh manjaro-zsh-config zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k
+	yay -Rsn gedit
+	rm -rf ~/.cache/p10k-* ~/.mozilla .z* ~/.nanorc
+	# sudo pacman -Rsn $(pacman -Qtdq)
+
+	# Wallpaper
+	wget 'https://raw.githubusercontent.com/FrenzyExists/wallpapers/main/Gruv/houses.jpg' -O ~/.config/houses.jpg
+	gsettings set org.gnome.desktop.background picture-uri-dark 'file:///home/awr/.config/houses.jpg'
+
+	# GTK & Icons
+	yay -S gtk-engine-murrine
+	yay -S tela-icon-theme
+	gsettings set org.gnome.desktop.interface icon-theme "'Tela-red-dark'"
+
+	# Gnome settings
+	gsettings set org.gnome.desktop.interface clock-show-seconds "true"
+	gsettings set org.gnome.desktop.interface show-battery-percentage "true"
+	gsettings set org.gnome.desktop.session idle-delay 900
+	gsettings set org.gnome.desktop.peripherals.mouse accel-profile "'flat'"
+	gsettings set org.gnome.desktop.peripherals.touchpad edge-scrolling-enabled "true"
+	gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled "false"
+	gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll "false"
+	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
+	gsettings set org.gnome.desktop.input-sources xkb-options "['grp:caps_toggle']"
+	gsettings set org.gnome.desktop.sound allow-volume-above-100-percent "true"
+	gsettings set org.gtk.Settings.FileChooser show-hidden "true"
+
+	# RustLang
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+	# Packages
+	## Apps
+	yay -S alacritty discord timeshift qbittorrent telegram-desktop krita
+	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
+	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
+
+	## Console utils
+	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python
+	yay -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
+	yay -S ffmpegthumbnailer unarchiver jq poppler fd
+
+	## Nvidia and Fish shell, then Reboot
+	sudo mhwd -a pci nonfree 0300
+	chsh -s /bin/fish
+	reboot
+}
 
 configure_user_dirs() {
-  mv ~/Рабочий\ стол ~/desktop
-  mv ~/Загрузки ~/download
-  mv ~/Шаблоны ~/templates
-  mv ~/Общедоступные ~/public
-  mv ~/Документы ~/documents
-  mv ~/Музыка ~/music
-  mv ~/Изображения ~/pictures
-  mv ~/Видео ~/videos
+	mv ~/Рабочий\ стол ~/desktop
+	mv ~/Загрузки ~/download
+	mv ~/Шаблоны ~/templates
+	mv ~/Общедоступные ~/public
+	mv ~/Документы ~/documents
+	mv ~/Музыка ~/music
+	mv ~/Изображения ~/pictures
+	mv ~/Видео ~/videos
 }
 
 configure_user_dirs
+setup_manjaro
