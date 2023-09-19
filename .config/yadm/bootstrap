@@ -46,7 +46,6 @@ setup_manajro() {
 	## Apps
 	yay -S alacritty discord timeshift qbittorrent telegram-desktop krita
 	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
-	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 
 	## Console utils
 	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python
