@@ -1,0 +1,43 @@
+" AstroNvim config to .ideavimrc
+set clipboard+=unnamed
+set clipboard+=ideaput
+set ideajoin
+set surround
+set idearefactormode=keep
+set easymotion
+
+set scrolloff=8
+set sidescrolloff=8
+set relativenumber
+
+let mapleader=" "
+
+" Tabs
+nnoremap <S-h> :action PreviousTab<CR>
+nnoremap <S-l> :action NextTab<CR>
+
+" Windows
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+nnoremap <a-j> :action MoveLineDown<CR>
+nnoremap <a-k> :action MoveLineUp<CR>
+nnoremap <a-s-j> :action MoveStatementDown<CR>
+nnoremap <a-s-k> :action MoveStatementUp<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+inoremap jk <Esc>
+
+nnoremap gr :action ShowUsages<CR>
+nnoremap <leader>s :action FileStructurePopup<CR>
+nnoremap <leader>lr :action RenameElement<CR>
+nnoremap <leader>la :action Refactorings.QuickListPopupAction<CR>
+vnoremap <leader>la :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>e :action GotoNextError<CR>
+
+"=========
+
+"nnoremap \e :e ~/.ideavimrc<CR>
+"nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
