@@ -23,7 +23,6 @@ setup_manjaro() {
 
 	# GTK & Icons
 	yay -S gtk-engine-murrine sassc
-	yay -S orchis-theme
 	yay -S tela-icon-theme
 	gsettings set org.gnome.desktop.interface icon-theme "'Tela-red-dark'"
 
@@ -45,7 +44,7 @@ setup_manjaro() {
 
 	# Packages
 	## Apps
-	yay -S alacritty discord timeshift qbittorrent telegram-desktop krita
+	yay -S firefox alacritty discord timeshift qbittorrent telegram-desktop krita
 	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
 	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 
@@ -58,7 +57,6 @@ setup_manjaro() {
 	sudo mhwd -a pci nonfree 0300
 	git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 	yadm remote set-url origin git@github.com:arewerage/dotfiles.git
-	git clone git@github.com:arewerage/astronvim_config.git ~/.config/nvim/lua/user
 	chsh -s /bin/fish
 	reboot
 }
