@@ -22,7 +22,8 @@ setup_manjaro() {
 	gsettings set org.gnome.desktop.background picture-uri-dark 'file:///home/awr/.config/houses.jpg'
 
 	# GTK & Icons
-	yay -S gtk-engine-murrine
+	yay -S gtk-engine-murrine sassc
+	yay -S orchis-theme
 	yay -S tela-icon-theme
 	gsettings set org.gnome.desktop.interface icon-theme "'Tela-red-dark'"
 
