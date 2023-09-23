@@ -5,9 +5,3 @@
 ```
 yadm clone git@github.com:arewerage/dotfiles.git
 ```
-
-After
-
-```
-sudo pacman -Rsn $(pacman -Qtdq)
-```
