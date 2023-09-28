@@ -57,7 +57,7 @@ rustlang() {
 }
 
 apps() {
-	yay -S firefox alacritty discord timeshift qbittorrent telegram-desktop krita
+	yay -S google-chrome firefox alacritty discord timeshift qbittorrent telegram-desktop krita
 	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
 	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 }
@@ -65,7 +65,7 @@ apps() {
 console_utils() {
 	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
 	yay -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
-	yay -S ffmpegthumbnailer unarchiver jq poppler fd
+	yay -S ffmpegthumbnailer unarchiver jq poppler fd aseprite
 
 	cargo install rust-script cargo-modules
 }
