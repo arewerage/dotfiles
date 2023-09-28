@@ -16,5 +16,7 @@ if status is-interactive
 
     alias lg='lazygit'
 
+    alias cleanup='sudo pacman -Rcns $(pacman -Qtdq)'
+
     neofetch
 end

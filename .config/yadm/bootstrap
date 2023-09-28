@@ -66,6 +66,8 @@ console_utils() {
 	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
 	yay -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
 	yay -S ffmpegthumbnailer unarchiver jq poppler fd
+
+	cargo install rust-script cargo-modules
 }
 
 nvidia() {
