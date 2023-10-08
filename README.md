@@ -22,8 +22,8 @@ sudo vi /etc/pacman.conf
 ```
 sudo pacman-mirrors -f && \
 sudo pacman -Syyu && \
-sudo pacman -S base-devel yay && \
-yay -S neovim yadm nerd-fonts-jetbrains-mono-160 ttf-ms-fonts && \
+sudo pacman -S base-devel paru && \
+paru -S neovim yadm ttf-jetbrains-mono-nerd ttf-ms-fonts && \
 chsh -s /bin/bash && \
 reboot
 ```
