@@ -58,7 +58,7 @@ rustlang() {
 
 apps() {
 	paru -S google-chrome firefox alacritty discord timeshift qbittorrent telegram-desktop krita
-	paru -S gimp blender obs-studio dconf-editor xp-pen-tablet
+	paru -S gimp blender obs-studio dconf-editor xp-pen-tablet protonvpn
 	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 }
 
