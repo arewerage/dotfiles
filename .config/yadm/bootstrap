@@ -21,10 +21,10 @@ journal_and_swap() {
 }
 
 cleanup() {
-	paru -Rsn firefox
-	paru -Rsn nano nano-syntax-highlighting
-	paru -Rsn zsh manjaro-zsh-config zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k
-	paru -Rsn gedit
+	yay -Rsn firefox
+	yay -Rsn nano nano-syntax-highlighting
+	yay -Rsn zsh manjaro-zsh-config zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting zsh-theme-powerlevel10k
+	yay -Rsn gedit
 	rm -rf ~/.cache/p10k-* ~/.mozilla .z* ~/.nanorc
 }
 
@@ -34,7 +34,7 @@ wallpaper() {
 }
 
 themes() {
-	paru -S gtk-engine-murrine sassc tela-icon-theme
+	yay -S gtk-engine-murrine sassc tela-icon-theme
 	gsettings set org.gnome.desktop.interface icon-theme "'Tela-red-dark'"
 }
 
@@ -57,15 +57,15 @@ rustlang() {
 }
 
 apps() {
-	paru -S google-chrome firefox alacritty discord timeshift qbittorrent telegram-desktop krita
-	paru -S gimp blender obs-studio dconf-editor xp-pen-tablet protonvpn
+	yay -S google-chrome firefox alacritty discord timeshift qbittorrent telegram-desktop krita
+	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet protonvpn
 	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 }
 
 console_utils() {
-	paru -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
-	paru -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
-	paru -S ffmpegthumbnailer unarchiver jq poppler fd aseprite parui
+	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
+	yay -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
+	yay -S ffmpegthumbnailer unarchiver jq poppler fd aseprite parui
 
 	cargo install rust-script cargo-modules
 }
