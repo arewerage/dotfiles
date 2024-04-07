@@ -80,8 +80,7 @@ neovim() {
 	rm -rf ~/.local/state/nvim
 	rm -rf ~/.cache/nvim
 
-	git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-	git clone git@github.com:arewerage/astronvim_config.git ~/.config/nvim/lua/user
+	git clone git@github.com:arewerage/astronvim_config_v4.git ~/.config/nvim
 	yadm remote set-url origin git@github.com:arewerage/dotfiles.git
 	nvim --headless +q
 }
