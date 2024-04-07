@@ -80,7 +80,7 @@ neovim() {
 	rm -rf ~/.local/state/nvim
 	rm -rf ~/.cache/nvim
 
-	rustup component add rust-analzer
+	rustup component add rust-analyzer
 
 	git clone git@github.com:arewerage/astronvim_config_v4.git ~/.config/nvim
 	yadm remote set-url origin git@github.com:arewerage/dotfiles.git
