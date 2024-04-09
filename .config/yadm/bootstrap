@@ -54,20 +54,20 @@ gnome_settings() {
 
 rustlang() {
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	rustup component add rust-analyzer
+	# cargo install rust-script cargo-modules
 }
 
 apps() {
-	yay -S google-chrome firefox alacritty discord timeshift qbittorrent telegram-desktop krita
-	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet
+	yay -S alacritty discord timeshift qbittorrent telegram-desktop krita
+	yay -S gimp blender obs-studio dconf-editor xp-pen-tablet aseprite
 	sudo rm -rf /etc/xdg/autostart/xppentablet.desktop
 }
 
 console_utils() {
 	yay -S starship fzf bat git-delta neofetch tldr zoxide yazi nodejs python silicon ranger
 	yay -S exa tokei just mhwd-tui fish lld xclip npm ripgrep lazygit gdu bottom tree-sitter-cli
-	yay -S ffmpegthumbnailer unarchiver jq poppler fd aseprite yarn
-
-	cargo install rust-script cargo-modules
+	yay -S ffmpegthumbnailer unarchiver jq poppler fd yarn
 }
 
 nvidia() {
@@ -79,8 +79,6 @@ neovim() {
 	rm -rf ~/.local/share/nvim
 	rm -rf ~/.local/state/nvim
 	rm -rf ~/.cache/nvim
-
-	rustup component add rust-analyzer
 
 	git clone git@github.com:arewerage/astronvim_config_v4.git ~/.config/nvim
 	yadm remote set-url origin git@github.com:arewerage/dotfiles.git
